@@ -1,0 +1,99 @@
+<resources>
+    <string name="gameName">QUICK MIND</string>
+    <string name="chooseTheme">CHOOSE ONE THEME</string>
+    <string name="art">Art</string>
+    <string name="science">Science</string>
+    <string name="social">Social Science</string>
+    <string name="sport">Sport</string>
+    <string name="info">You must select a theme to play</string>
+
+    <string name="settings">Settings</string>
+    <string name="Language">Language</string>
+    <string name="Textlanguage">
+        This Game you can find in three language,
+        for use the other language you have to
+        change the language of the device.
+    </string>
+    <string name="Aboutus">About Us</string>
+    <string name="spanish">Spanish</string>
+    <string name="english">English</string>
+    <string name="german">German</string>
+    <string name="Textabout">
+    Final Proyect object oriented programming
+    app created by: \n
+        Juan Pablo Herran\n
+        Luisa Alejandra Jojoa\n
+        Ricardo Andres Melo \n
+        Duban Fernando Rosero \n \n
+
+        complaints, doubts, concerns
+        alguien@unal.edu.co \n \n
+
+        Thank you for downloading
+    </string>
+
+    <string name="app_name">Game Mode</string>
+    <string name="records">Records</string>
+    <string name="normalMode">Normal Game</string>
+    <string name="timeTrialMode">Time Trial Game</string>
+    <string name="chooseMode">Select Game Mode</string>
+
+
+    //CIENCIAS
+
+    <string name="pregunta41">Proceso por el cual la celula se divide formando dos celulas hijas</string>
+    <string name="respuestaCorrecta41">Mitosis</string>
+    <string-array name="respuestasPregunta41">
+        <item>Mitosis</item>
+        <item>Meiosis</item>
+        <item>Citocinesis</item>
+        <item>Ninguna de las anteriores</item>
+    </string-array>
+
+
+    <string name="pregunta42">¿Como se le llama al descendiente entre el asno y la yegua</string>
+    <string name="respuestaCorrecta42">Mula</string>
+    <string-array name="respuestasPregunta42">
+        <item>Mula</item>
+        <item>Burro</item>
+        <item>Potranca</item>
+        <item>Buey</item>
+    </string-array>
+
+    <string name="pregunta43">Para los botanicos, ¿Que es un tomate?</string>
+    <string name="respuestaCorrecta43">Fruta</string>
+    <string-array name="respuestasPregunta43">
+        <item>Fruta</item>
+        <item>Hortaliza</item>
+        <item>Verdura</item>
+        <item>Vegetal</item>
+    </string-array>
+
+    <string name="pregunta44">¿Cual fue el invento de Alfred Nobel, el que da nombre a los famosos premios?</string>
+    <string name="respuestaCorrecta44">Fruta</string>
+    <string-array name="respuestasPregunta44">
+        <item>Fruta</item>
+        <item>Hortaliza</item>
+        <item>Verdura</item>
+        <item>Vegetal</item>
+    </string-array>
+
+    //Deporte
+    <string name="pregunta51">What is the colombian capital?</string>
+    <string name="respuestaCorrecta51">Bogotá</string>
+    <string-array name="respuestasPregunta51">Bogota,Moscu,Napoli,At</string-array>
+
+    //Artes
+    <string name="pregunta61">What is the colombian capital?</string>
+    <string name="respuestaCorrecta61">Bogotá</string>
+    <string-array name="respuestasPregunta61">Bogota,Moscu,Napoli,At</string-array>
+
+
+    //Sociales
+    <string name="pregunta71">What is the colombian capital?</string>
+    <string name="respuestaCorrecta71">Bogotá</string>
+    <string-array name="respuestasPregunta71">Bogota,Moscu,Napoli,At</string-array>
+
+    <string name="puntaje">Score:</string>
+
+</resources>

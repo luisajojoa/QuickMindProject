@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_modo_juego"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondomodo"
+    tools:context="com.oop.dubanrosero.quickmindproject.ModoJuego">
+
+    //encabezado
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_weight="3">
+
+
+        <TextView
+            android:text="@string/chooseMode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/titleSize"
+            android:textColor="@color/yellow"
+            android:gravity="center"
+            android:background="@null"
+            android:id="@+id/title1"
+            />
+
+    </LinearLayout>
+
+    //lista de los modos de juego
+
+    //Modo normal
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_weight="1.5"
+        >
+        <Button
+            android:text="@string/normalMode"
+            android:layout_width="@dimen/textLarge"
+            android:layout_height="@dimen/button"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:id="@+id/nomalModeText"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:src="@drawable/game_controller"
+            android:id="@+id/normalModeImage"
+
+            />
+
+    </LinearLayout>
+
+
+    //Modo contrarreloj
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_weight="1.5"
+        >
+
+        <Button
+            android:text="@string/timeTrialMode"
+            android:layout_width="@dimen/textLarge"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fontSize"
+            android:gravity="center_horizontal"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:id="@+id/timeTrialModeText"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/button"
+            android:layout_height="@dimen/button"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/contrareloj"
+            android:id="@+id/timeTrialModeImage"
+            />
+    </LinearLayout>
+
+    //Records
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_weight="1.2">
+
+        <Button
+            android:text="@string/records"
+            android:layout_width="@dimen/textLarge"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/fontSize"
+            android:textColor="@color/white"
+            android:background="@null"
+            android:id="@+id/recordText"
+            />
+
+        <ImageView
+            android:layout_width="@dimen/button"
+            android:layout_height="match_parent"
+            android:src="@drawable/records"
+            android:id="@+id/recordsImage"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height"
+        android:orientation="horizontal"
+
+
+        android:layout_weight="1.2">
+        <ImageButton
+            android:layout_width="@dimen/smallButton"
+            android:layout_height="@dimen/smallButton"
+            android:background="@drawable/refresh"
+            android:layout_gravity="left"
+            android:id="@+id/returnButton"
+
+
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

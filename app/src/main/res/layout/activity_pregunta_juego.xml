@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_pregunta_juego"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo1"
+    tools:context="com.oop.dubanrosero.quickmindproject.PreguntaJuego">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/puntaje"
+            android:layout_height="35dp"
+            android:background="@color/amarillo"
+            android:pointerIcon="none"
+            android:keepScreenOn="true"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:text="0"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:layout_weight="4" />
+        <ImageView
+            android:src="@drawable/vida"
+            android:id="@+id/corazon2"
+            android:layout_height="35dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:src="@drawable/vida"
+            android:id="@+id/corazon1"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+
+        <ImageView
+            android:layout_height="35dp"
+            android:src="@drawable/vida"
+            android:id="@+id/corazon3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/imagen"
+            tools:visibility="invisible"
+            android:layout_width="300dp"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:text="pregunta"
+            android:id="@+id/textView2"
+            android:layout_width="300dp"
+            android:background="@android:color/transparent"
+            android:backgroundTint="@android:color/transparent"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_centerVertical="true"
+            tools:textSize="24sp"
+            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <Button
+            android:id="@+id/respuestaUno"
+            android:text="respuesta 1"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/gris" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/textView8"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="respuesta 2"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:id="@+id/respuestaDos"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/gris" />/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/textView7"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="respuesta 3"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:id="@+id/respuestaTres"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/gris" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/textView9"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="respuesta 4"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:id="@+id/respuestaCuatro"
+            android:visibility="visible"
+            android:layout_weight="3"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/gris" />/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ImageView
+            android:src="@drawable/cambio_de_pregunta"
+            android:id="@+id/cambioDePregunta"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/porcentaje"
+            android:id="@+id/menosDos"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:src="@drawable/rendirse"
+            android:id="@+id/rendirse"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+</LinearLayout>

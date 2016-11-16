@@ -29,6 +29,7 @@ public class ModoJuego extends Activity {
         Intent intent =  getIntent();
         Bundle elTema = intent.getExtras();
         final int tema = (int) elTema.get("TEMA");
+
         //ASIGNAR VALORES
 
         //TEXTVIEW

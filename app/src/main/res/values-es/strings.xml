@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="gameName">Quick Mind</string>
     <string name="chooseTheme">CHOOSE ONE THEME</string>
@@ -6,7 +7,6 @@
     <string name="social">Social Science</string>
     <string name="sport">Sport</string>
     <string name="info">You must select a theme to play</string>
-
     <string name="settings">Settings</string>
     <string name="Language">Language</string>
     <string name="Textlanguage">
@@ -31,16 +31,13 @@
 
         Thank you for downloading
     </string>
-
     <string name="app_name">Game Mode</string>
     <string name="records">Records</string>
     <string name="normalMode">Normal Game</string>
     <string name="timeTrialMode">Time Trial Game</string>
     <string name="chooseMode">Select Game Mode</string>
     <string name="contadorPuntaje">00</string>
-
     <string name="puntaje">Score:</string>
-
     <string name="respuestaCorrecta">RIGHT!!</string>
     <string name="respuestaIncorrecta">WRONG!!</string>
 

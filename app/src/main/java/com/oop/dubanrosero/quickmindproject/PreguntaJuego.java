@@ -26,11 +26,9 @@ import java.util.Random;
 public class PreguntaJuego extends Activity implements View.OnClickListener {
     TextView pregunta;
     Button respuestaUno,respuestaDos,respuestaTres,respuestaCuatro;
-    List<PreguntaSinImagen> preguntasDeGeografia=new ArrayList<PreguntaSinImagen>();
-    List<PreguntaConImagen> preguntasDeGeografiaConImagen=new ArrayList<PreguntaConImagen>();
     Random genradorDeRandom=new Random();
-    int iteradorDePregunta, aux, randImText;
-    int puntaje=0;
+    int aux, randImText;
+    int contadorPuntaje=00;
     int numeroDeVidas=3;
     ImageView corazonUno,corazonDos,corazonTres,cambioDepregunta,cincuenta,rendirse;
     ImageView imagen;
@@ -45,12 +43,14 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
 
 
     public void crearPregunta(int tema) {
+        TextView puntaje = (TextView) findViewById(R.id.puntaje);
         pregunta = (TextView) findViewById(R.id.textView2);
         imagen= (ImageView) findViewById(R.id.imagen);
         pregunta.setAlpha(0);
         imagen.setImageAlpha(0);
         randImText = genradorDeRandom.nextInt(9);
 
+        puntaje.setText(String.valueOf(contadorPuntaje));
         if(randImText %3!=1){
             //PREGUNTA CON TEXTO
             aux =1;
@@ -151,6 +151,10 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
         if (numeroDeVidas==0) {
             corazonTres.setAlpha(0);
             volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+            Intent gameOver = new Intent(PreguntaJuego.this,FinDelJuego.class);
+            gameOver.putExtra("PUNTAJE",contadorPuntaje);
+            gameOver.putExtra("TEMA",tema);
+            startActivity(gameOver);
         }
         if (numeroDeVidas==1) {
             corazonUno.setAlpha(0);
@@ -243,10 +247,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaUno.getText().equals(preguntaTextoRand.getRespuestaCorrecta())){
                         respuestaUno.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaUno.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -254,10 +264,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaUno.getText().equals(preguntaImagenRand.getRespuestaCorrecta())){
                         respuestaUno.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaUno.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -268,10 +284,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaDos.getText().equals(preguntaTextoRand.getRespuestaCorrecta())){
                         respuestaDos.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaDos.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -279,10 +301,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaDos.getText().equals(preguntaImagenRand.getRespuestaCorrecta())){
                         respuestaDos.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaDos.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -294,10 +322,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaTres.getText().equals(preguntaTextoRand.getRespuestaCorrecta())){
                         respuestaTres.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaTres.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -305,10 +339,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaTres.getText().equals(preguntaImagenRand.getRespuestaCorrecta())){
                         respuestaTres.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaTres.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -319,10 +359,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaCuatro.getText().equals(preguntaTextoRand.getRespuestaCorrecta())){
                         respuestaCuatro.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaCuatro.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }
@@ -330,10 +376,16 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                     if(respuestaCuatro.getText().equals(preguntaImagenRand.getRespuestaCorrecta())){
                         respuestaCuatro.setBackgroundColor(getResources().getColor(R.color.verde));
                         volverATodosBlancos(respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
+                        toastBien.show();
+                        contadorPuntaje+=5;
                         crearPregunta(tema);
                     }else{
                         respuestaCuatro.setBackgroundColor(getResources().getColor(R.color.rojo));
                         numeroDeVidas--;
+                        Toast toastMal= Toast.makeText(getApplicationContext(), R.string.respuestaIncorrecta, Toast.LENGTH_SHORT);
+                        toastMal.show();
+                        contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
                         quitarCorazon(numeroDeVidas);
                     }

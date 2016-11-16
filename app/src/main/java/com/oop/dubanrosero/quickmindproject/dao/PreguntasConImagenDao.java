@@ -88,6 +88,42 @@ public class PreguntasConImagenDao {
             data.add(imageQuestion5);
 
 
+            String[] options401 = {
+                    "Isaac Newton","Tesla","Kirchhoff","Faraday"
+            };
+            PreguntaConImagen imageQuestion401 = new PreguntaConImagen(
+                    "http://www.biografiasyvidas.com/biografia/k/fotos/kirchhoff.jpg",
+                    Constant.TYPE_CIENCIAS,
+                    options401,
+                    "Kirchhoff"
+            );
+            data.add(imageQuestion401);
+
+            String[] options402 = {
+                    "Eagle Nebula","Helix Nebula","Orion Nebula","Andromeda Nebula"
+            };
+            PreguntaConImagen imageQuestion402 = new PreguntaConImagen(
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NGC7293_%282004%29.jpg/800px-NGC7293_%282004%29.jpg",
+                    Constant.TYPE_CIENCIAS,
+                    options402,
+                    "Helix Nebula"
+            );
+            data.add(imageQuestion402);
+
+            String[] options403 = {
+                    "Hydrocarbons","Peroxide","Carbon Dioxide","Water"
+            };
+            PreguntaConImagen imageQuestion403 = new PreguntaConImagen(
+                    "http://static.naukas.com/media/2012/10/molecula-agua.jpg",
+                    Constant.TYPE_CIENCIAS,
+                    options403,
+                    "Water"
+            );
+            data.add(imageQuestion403);
+
+
+
+
         }
 
         else {
@@ -103,6 +139,80 @@ public class PreguntasConImagenDao {
                     "Kirchhoff"
             );
             data.add(preguntaConImagen1);
+
+            String[] opciones401 = {
+                    "Isaac Newton","Tesla","Kirchhoff","Faraday"
+            };
+            PreguntaConImagen preguntaConImagen401 = new PreguntaConImagen(
+                    "http://www.biografiasyvidas.com/biografia/k/fotos/kirchhoff.jpg",
+                    Constant.TYPE_CIENCIAS,
+                    opciones401,
+                    "Kirchhoff"
+            );
+            data.add(preguntaConImagen401);
+
+            String[] opciones402 = {
+                    "Nebulosa del Águila","Nebulosa de la Hélice","Nebulosa de Andromeda","Nebulosa de Orion"
+            };
+            PreguntaConImagen preguntaConImagen402 = new PreguntaConImagen(
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/NGC7293_%282004%29.jpg/800px-NGC7293_%282004%29.jpg",
+                    Constant.TYPE_CIENCIAS,
+                    opciones402,
+                    "Nebulosa de la Hélice"
+            );
+            data.add(preguntaConImagen402);
+
+            String[] opciones403 = {
+                    "Agua Oxigenada","Agua","Dioxido de Carbono","Hidrocarburos"
+            };
+            PreguntaConImagen preguntaConImagen403 = new PreguntaConImagen(
+                    "http://static.naukas.com/media/2012/10/molecula-agua.jpg",
+                    Constant.TYPE_CIENCIAS,
+                    opciones403,
+                    "Agua"
+            );
+            data.add(preguntaConImagen403);
+
+            //region PREGUNTA 350
+            String[] opciones350 = {
+                    "Osa Mayor","Escorpión","Tauro","Ninguna de las anteriores"
+            };
+
+            PreguntaConImagen preguntaConImagen350 = new PreguntaConImagen(
+                    "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTcwmQPoZ5lTZ1bLGb9h34-7Y-T7vBpvelULNfN3jGWFDCqzqqq",
+                    Constant.TYPE_CIENCIAS,
+                    opciones350,
+                    "Escorpión"
+            );
+            data.add(preguntaConImagen350);
+            //endregion
+
+            //region PREGUNTA 351
+            String[] opciones351 = {
+                    "Ribosoma","Lisosoma","Mitocondria","Nucleolo"
+            };
+            PreguntaConImagen preguntaConImagen351= new PreguntaConImagen(
+                    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTGVNfP59X71z6xHtCQeMPI7zpfO3DnNcP4BvWNUSK_6feAMb5b",
+                    Constant.TYPE_CIENCIAS,
+                    opciones351,
+                    "Mitocondria"
+            );
+            data.add(preguntaConImagen351);
+            //endregion
+
+            //region PREGUNTA 352
+            String[] opciones352 = {
+                    "Thomas Alva Edison","Nikola Tesla","Ampere","Todos los anteriores"
+            };
+            PreguntaConImagen preguntaConImagen352= new PreguntaConImagen(
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ6Vj-V8TLnFqemWdURrqzx2aLxa3eQ3OWb2qPhIhJqQCahdpRw",
+                    Constant.TYPE_CIENCIAS,
+                    opciones352,
+                    "Thomas Alva Edison"
+            );
+            data.add(preguntaConImagen352);
+            //endregion
+
 
             String[] opciones2 = {
                     "Pentanol","Pentano","Ciclopentano","Cicloheptano"
@@ -172,6 +282,40 @@ public class PreguntasConImagenDao {
             );
 
             data.add(imageQuestion1);
+
+
+            String[] options411 = {
+                    "Samurai","Fencing","Taekwondo","Sword"
+            };
+            PreguntaConImagen imageQuestion411 = new PreguntaConImagen(
+                    "http://www.colegioamoros.org/contenido/uploads/esgrima-02.jpg",
+                    Constant.TYPE_DEPORTE,
+                    options411,
+                    "Fencing"
+            );
+            data.add(imageQuestion411);
+
+            String[] options412 = {
+                    "Lasse Virén","Usain Bolt","Marita Koch","Oscar Pistorius"
+            };
+            PreguntaConImagen imageQuestion412 = new PreguntaConImagen(
+                    "http://www.ewtnnewsonline.com/images/Usain_Bolt_London_Olypmics_Credit_Harry_How_Getty_Images_Sport_Getty_Images_EWTN_US_Catholic_News_8_31_12.jpg",
+                    Constant.TYPE_DEPORTE,
+                    options412,
+                    "Usain Bolt"
+            );
+            data.add(imageQuestion412);
+
+            String[] options413 = {
+                    "Is not a sport","Ski","Surfing","Bobsleigh"
+            };
+            PreguntaConImagen imageQuestion413 = new PreguntaConImagen(
+                    "http://iws.mev.hr/obadiclea/wp-content/uploads/2016/06/bobsleigh.jpg",
+                    Constant.TYPE_DEPORTE,
+                    options413,
+                    "Bobsleigh"
+            );
+            data.add(imageQuestion413);
 
             String[] options2 = {
                     "Fuleco","Ato","Naranjito","Zakumi"
@@ -244,6 +388,45 @@ public class PreguntasConImagenDao {
                     "Celta de Vigo"
             );
             data.add(preguntaConImagen1);
+
+            //region PREGUNTA 360
+            String[] opciones360 = {
+                    "Nicklaus Tintiger","Joachim Loew","Sepp Herberger","Franz Beckenbauer"
+            };
+            PreguntaConImagen preguntaConImagen360 = new PreguntaConImagen(
+                    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ-dD2B_9Z5jnpJqz8P4Iq9MD-CQfQP700hx-ItBcbnFvGvERqR",
+                    Constant.TYPE_DEPORTE,
+                    opciones360,
+                    "Joachim Loew"
+            );
+            data.add(preguntaConImagen360);
+            //endregion
+
+            //region PREGUNTA 361
+            String[] opciones361= {
+                    "Urs Fischer","Bernhard Heusler","Luca Zuffi","Fabian Schaer"
+            };
+            PreguntaConImagen preguntaConImagen361 = new PreguntaConImagen(
+                    "http://www.srf.ch/var/storage/images/auftritte/sport/bilder/2014/10/20/fabian_schaer/72244938-2-ger-DE/fabian_schaer_span12.jpg",
+                    Constant.TYPE_DEPORTE,
+                    opciones361,
+                    "Fabian Schaer"
+            );
+            data.add(preguntaConImagen361);
+            //endregion
+
+            //region PREGUNTA 362
+            String[] opciones362= {
+                    "Letzigrund","St. Jakob Park","AFG Arena","Ninguna de las anteriores"
+            };
+            PreguntaConImagen preguntaConImagen362= new PreguntaConImagen(
+                    "http://www.gazzetta.gr/sites/default/files/sitefiles_2016-05/4a9d0d5a4a7f1d87ce77d6a7bbba7261.jpg",
+                    Constant.TYPE_DEPORTE,
+                    opciones362,
+                    "St. Jakob Park"
+            );
+            data.add(preguntaConImagen362);
+            //endregion
 
             String[] opciones2 = {
                     "Fuleco","Ato","Naranjito","Zakumi"
@@ -367,6 +550,38 @@ public class PreguntasConImagenDao {
 
             data.add(imageQuestion5);
 
+            String[] options421 = {
+                    "Saudi Arabia","Iran","Yemen","India"
+            };
+            PreguntaConImagen imageQuestion421 = new PreguntaConImagen(
+                    "http://mapamundial.co/geografia/situacion-geografica-de-arabia-saudita.jpg",
+                    Constant.TYPE_SOCIALES,
+                    options421,
+                    "Saudi Arabia"
+            );
+            data.add(imageQuestion421);
+
+            String[] options422 = {
+                    "Rio Claro","La Paz","Las Lajas","Juanambu"
+            };
+            PreguntaConImagen imageQuestion422 = new PreguntaConImagen(
+                    "https://upload.wikimedia.org/wikipedia/commons/a/a6/Santuario_Nacional_de_Las_Lajas_02.jpg",
+                    Constant.TYPE_SOCIALES,
+                    options422,
+                    "Las Lajas"
+            );
+            data.add(imageQuestion422);
+
+            String[] options423 = {
+                    "Simon Bolivar","Jose Mutis","Julio Garavito","Francisco J. Caldas"
+            };
+            PreguntaConImagen imageQuestion423 = new PreguntaConImagen(
+                    "http://www.biografiasyvidas.com/biografia/c/fotos/caldas_francisco_jose.jpg",
+                    Constant.TYPE_SOCIALES,
+                    options423,
+                    "Francisco J. Caldas"
+            );
+            data.add(imageQuestion423);
 
 
         }
@@ -384,6 +599,78 @@ public class PreguntasConImagenDao {
                     "Filipinas"
             );
             data.add(preguntaConImagen1);
+
+            String[] opciones421 = {
+                    "Arabia Saudita","Iran","Yemen","India"
+            };
+            PreguntaConImagen preguntaConImagen421 = new PreguntaConImagen(
+                    "http://mapamundial.co/geografia/situacion-geografica-de-arabia-saudita.jpg",
+                    Constant.TYPE_SOCIALES,
+                    opciones421,
+                    "Arabia Saudita"
+            );
+            data.add(preguntaConImagen421);
+
+            String[] opciones422 = {
+                    "Rio Claro","La Paz","Las Lajas","Juanambu"
+            };
+            PreguntaConImagen preguntaConImagen422 = new PreguntaConImagen(
+                    "https://upload.wikimedia.org/wikipedia/commons/a/a6/Santuario_Nacional_de_Las_Lajas_02.jpg",
+                    Constant.TYPE_SOCIALES,
+                    opciones422,
+                    "Las Lajas"
+            );
+            data.add(preguntaConImagen422);
+
+            String[] opciones423 = {
+                    "Simón Bolívar","José Mutis","Julio Garavito","Francisco J. Caldas"
+            };
+            PreguntaConImagen preguntaConImagen423 = new PreguntaConImagen(
+                    "http://www.biografiasyvidas.com/biografia/c/fotos/caldas_francisco_jose.jpg",
+                    Constant.TYPE_SOCIALES,
+                    opciones423,
+                    "Francisco J. Caldas"
+            );
+            data.add(preguntaConImagen423);
+
+            //region PREGUNTA 370
+            String[] opciones370 = {
+                    "Castell humà","Castellers","Pinyes d'homes","Niguna de las anteriores"
+            };
+            PreguntaConImagen preguntaConImagen370= new PreguntaConImagen(
+                    "http://ep01.epimg.net/cat/imagenes/2016/10/02/catalunya/1475403770_457201_1475434351_noticia_fotograma.jpg",
+                    Constant.TYPE_SOCIALES,
+                    opciones370,
+                    "Castellers"
+            );
+            data.add(preguntaConImagen370);
+            //endregion
+
+            //region PREGUNTA 371
+            String[] opciones371 = {
+                    "Chelmno","Ninguna de las anteriores","Rumbula","Arbeitsdorf","Sachsenhausen"
+            };
+            PreguntaConImagen preguntaConImagen371= new PreguntaConImagen(
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSjnYWBb5QiIoHL5fKsMdiMSW59_urvT0zd74D_zysqpWZ9bmSO",
+                    Constant.TYPE_SOCIALES,
+                    opciones371,
+                    "Ninguna de las anteriores"
+            );
+            data.add(preguntaConImagen371);
+            //endregion
+
+            //region PREGUNTA 372
+            String[] opciones372 = {
+                    "Nefertiti","Cleopatra","Nitocris","Meryt-Neit"
+            };
+            PreguntaConImagen preguntaConImagen372= new PreguntaConImagen(
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRB5xk8lV4a_2oi4TTauGiB4d3hvMnBTVSeEzXkywabqe7SuxSQ",
+                    Constant.TYPE_SOCIALES,
+                    opciones372,
+                    "Nefertiti"
+            );
+            data.add(preguntaConImagen372);
+            //endregion
 
             String[] opciones2 = {
                     "Gales","Gibraltar","Republica de Malta","Papua Nueva Guinea"
@@ -459,6 +746,8 @@ public class PreguntasConImagenDao {
 
             data.add(imageQuestion1);
 
+
+
             String[] options2 = {
                     "Guitar","Bass","Bandola","Ukelele"
             };
@@ -507,6 +796,39 @@ public class PreguntasConImagenDao {
             );
             data.add(imageQuestion5);
 
+            String[] options431 = {
+                    "Oboe","Charango","Four","Treble"
+            };
+            PreguntaConImagen imageQuestion431 = new PreguntaConImagen(
+                    "https://makingmulticulturalmusic.files.wordpress.com/2013/03/charango-full-color-image-e1363116667672.jpg",
+                    Constant.TYPE_ARTES,
+                    options431,
+                    "Charango"
+            );
+            data.add(imageQuestion431);
+
+            String[] options432 = {
+                    "Carlos Villagran","Charles Chaplin","Roberto Bolaños","Cantinflas"
+            };
+            PreguntaConImagen imageQuestion432 = new PreguntaConImagen(
+                    "http://elvasomediolleno.guru/wp-content/uploads/2015/05/Charles-Chaplin.jpg",
+                    Constant.TYPE_ARTES,
+                    options432,
+                    "Charles Chaplin"
+            );
+            data.add(imageQuestion432);
+
+            String[] options433 = {
+                    "Rafael","Miguel Angel","Donatelo","Leonardo Da Vinci"
+            };
+            PreguntaConImagen imageQuestion433 = new PreguntaConImagen(
+                    "http://3.bp.blogspot.com/-LA3mZNUX0HE/VP3yMoO-8-I/AAAAAAAADno/VuZM_1nts2M/s1600/Miguel_%C3%81ngel,%2BCreacion%2Bde%2BAdan.jpg",
+                    Constant.TYPE_ARTES,
+                    options433,
+                    "Miguel Angel"
+            );
+            data.add(imageQuestion433);
+
         }
 
         else {
@@ -515,6 +837,39 @@ public class PreguntasConImagenDao {
                     "Quimera","Minotauro","Grifo","Centauro"
             };
 
+            String[] opciones431 = {
+                    "Oboe","Cuatro","Charango","Tiple"
+            };
+            PreguntaConImagen preguntaConImagen431 = new PreguntaConImagen(
+                    "https://makingmulticulturalmusic.files.wordpress.com/2013/03/charango-full-color-image-e1363116667672.jpg",
+                    Constant.TYPE_ARTES,
+                    opciones431,
+                    "Charango"
+            );
+            data.add(preguntaConImagen431);
+
+            String[] opciones432 = {
+                    "Carlos Villagran","Roberto Bolaños","Charles Chaplin","Cantinflas"
+            };
+            PreguntaConImagen preguntaConImagen432 = new PreguntaConImagen(
+                    "http://elvasomediolleno.guru/wp-content/uploads/2015/05/Charles-Chaplin.jpg",
+                    Constant.TYPE_ARTES,
+                    opciones432,
+                    "Charles Chaplin"
+            );
+            data.add(preguntaConImagen432);
+
+            String[] opciones433 = {
+                    "Rafael","Miguel Ángel","Donatelo","Leonardo Da Vinci"
+            };
+            PreguntaConImagen preguntaConImagen433 = new PreguntaConImagen(
+                    "http://3.bp.blogspot.com/-LA3mZNUX0HE/VP3yMoO-8-I/AAAAAAAADno/VuZM_1nts2M/s1600/Miguel_%C3%81ngel,%2BCreacion%2Bde%2BAdan.jpg",
+                    Constant.TYPE_ARTES,
+                    opciones433,
+                    "Miguel Ángel"
+            );
+            data.add(preguntaConImagen433);
+
             PreguntaConImagen preguntaConImagen1 = new PreguntaConImagen(
                     "http://vignette1.wikia.nocookie.net/el-bestiario/images/0/06/Quimera.jpg/revision/latest?cb=20141011201106&path-prefix=es",
                     Constant.TYPE_ARTES,
@@ -522,6 +877,49 @@ public class PreguntasConImagenDao {
                     "Quimera"
             );
             data.add(preguntaConImagen1);
+
+
+            //region PREGUNTA 340
+            String[] opciones340 = {
+                    "Sofia Nix","Franceska Jaimes","Melanie Rios","Jueputa que rico"
+            };
+
+            PreguntaConImagen preguntaConImagen340 = new PreguntaConImagen(
+                    "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTP1qwFfhAYVK9MWn9WufUNUQcTxht_mUXFto6MvUDXqB7c3hmfeQ",
+                    Constant.TYPE_ARTES,
+                    opciones340,
+                    "Jueputa que rico"
+            );
+            data.add(preguntaConImagen340);
+            //endregion
+
+            //region PREGUNTA 341
+            String[] opciones341= {
+                    "Edvard Munch","Francisco de Goya","Miguel Angel","Gustav Klimt"
+            };
+            PreguntaConImagen preguntaConImagen341 = new PreguntaConImagen(
+                    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQeMldd8FV4Sveitwm1ojZpisNgKyewUeVynYopwIRpLtCHk0HY",
+                    Constant.TYPE_ARTES,
+                    opciones341,
+                    "Edvard Munch"
+            );
+            data.add(preguntaConImagen341);
+            //endregion
+
+            //region PREGUNTA 342
+            String[] opciones342= {
+                    "Tiziano","Miró","Degas","Rubens"
+            };
+            PreguntaConImagen preguntaConImagen342 = new PreguntaConImagen(
+                    "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQDYjitaVmC5Y8fAEB-8e81hUqBPyaMNESy1A3dg0jNjirRzVGk4w",
+                    Constant.TYPE_ARTES,
+                    opciones342,
+                    "Miró"
+            );
+            data.add(preguntaConImagen342);
+            //endregion
+
+
 
             String[] opciones2 = {
                     "Guitarra","Bajo","Bandola","Ukelele"

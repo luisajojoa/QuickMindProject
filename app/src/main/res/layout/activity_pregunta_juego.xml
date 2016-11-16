@@ -14,16 +14,17 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <Button
+        <TextView
             android:id="@+id/puntaje"
             android:layout_height="35dp"
             android:background="@color/amarillo"
             android:pointerIcon="none"
             android:keepScreenOn="true"
             android:visibility="visible"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/height"
             android:layout_weight="2"
-            android:text="0"
+            android:text="@string/contadorPuntaje"
+            android:gravity="center"
             android:layout_gravity="center_vertical"/>
         <TextView
             android:layout_width="0dp"

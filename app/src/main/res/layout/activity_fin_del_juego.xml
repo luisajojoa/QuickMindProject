@@ -34,7 +34,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:textSize="60sp"
+                android:textSize="55sp"
                 android:text="@string/puntaje"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -44,7 +44,7 @@
                 android:id="@+id/mensajePuntaje" />
 
             <TextView
-                android:textSize="60sp"
+                android:textSize="55sp"
                 android:text="PUNTAJE"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -64,6 +64,19 @@
             android:orientation="horizontal">
 
 
+            <ImageView
+                android:src="@drawable/atras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/reiniciar"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:src="@android:drawable/stat_notify_missed_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/exit"
+                android:layout_weight="1" />
         </LinearLayout>
 
     </LinearLayout>

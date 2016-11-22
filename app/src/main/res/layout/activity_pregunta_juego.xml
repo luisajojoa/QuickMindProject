@@ -78,9 +78,9 @@
             android:layout_width="300dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
-            android:gravity="center_vertical|center_horizontal"
+            android:gravity="center_vertical"
             android:layout_centerVertical="true"
-            tools:textSize="24sp"
+            android:textSize="24sp"
             android:layout_weight="1"
             android:layout_height="80dp"
             android:layout_gravity="center"/>

@@ -5,14 +5,25 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.oop.dubanrosero.quickmindproject.Util.Constant;
+
 public class FinDelJuego extends Activity {
     ImageView exit,restart;
     int tema;
+    int puntajeJugador;
+
+    @Override
+    public void onBackPressed(){
+        Intent restart = new Intent(FinDelJuego.this,ModoJuego.class);
+        restart.putExtra("TEMA",tema);
+        startActivity(restart);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +45,12 @@ public class FinDelJuego extends Activity {
 
         Intent intent =  getIntent();
         Bundle bundle= intent.getExtras();
-        int puntajeJugador = (int) bundle.get("PUNTAJE");
+        puntajeJugador = (int) bundle.get("PUNTAJE");
         tema= (int) bundle.get("TEMA");
 
         puntaje.setText(String.valueOf(puntajeJugador));
+
+
 
         restart.setOnClickListener(new View.OnClickListener() {
             @Override

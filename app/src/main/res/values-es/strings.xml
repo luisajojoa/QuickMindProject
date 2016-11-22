@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="gameName">Quick Mind</string>
-    <string name="chooseTheme">CHOOSE ONE THEME</string>
-    <string name="art">Art</string>
-    <string name="science">Science</string>
-    <string name="social">Social Science</string>
-    <string name="sport">Sport</string>
-    <string name="info">You must select a theme to play</string>
-    <string name="settings">Settings</string>
-    <string name="Language">Language</string>
+    <string name="chooseTheme">Elije un tema</string>
+    <string name="art">Arte</string>
+    <string name="science">Ciencia</string>
+    <string name="social">Sociales</string>
+    <string name="sport">Deporte</string>
+    <string name="info">Debes seleccionar un tema para jugar</string>
+    <string name="settings">Ajustes</string>
+    <string name="Language">Idioma</string>
     <string name="Textlanguage">
-        This Game you can find in three language,
-        for use the other language you have to
-        change the language of the device.
+        Puedes encontrar este juego en 2 idiomas;
+        para cambiar de idioma debes ir a ajustes
+        del dispositivo.
+
     </string>
-    <string name="Aboutus">About Us</string>
-    <string name="spanish">Spanish</string>
-    <string name="english">English</string>
+    <string name="Aboutus">Nosotros</string>
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
     <string name="german">German</string>
     <string name="Textabout">
-    Final Proyect object oriented programming
-    app created by: \n
+        AProyecto final de programación orientada
+        a objetos.
+        Aplicacion creaada por:
         Juan Pablo Herran\n
         Luisa Alejandra Jojoa\n
         Ricardo Andres Melo \n
         Duban Fernando Rosero \n \n
 
-        complaints, doubts, concerns
+        Sugerencias, comentarios, criticas y amenazas
         alguien@unal.edu.co \n \n
 
-        Thank you for downloading
+        Gracias por descargar :)
     </string>
-    <string name="app_name">Game Mode</string>
+    <string name="app_name">Modo de Juego</string>
     <string name="records">Records</string>
-    <string name="normalMode">Normal Game</string>
-    <string name="timeTrialMode">Time Trial Game</string>
-    <string name="chooseMode">Select Game Mode</string>
+    <string name="normalMode">Modo Normal</string>
+    <string name="timeTrialMode">Contrarreloj</string>
+    <string name="chooseMode">Elije un tipo de juego</string>
     <string name="contadorPuntaje">00</string>
-    <string name="puntaje">Score:</string>
-    <string name="respuestaCorrecta">RIGHT!!</string>
+    <string name="puntaje">Puntaje:</string>
+    <string name="respuestaCorrecta">CORRECTO!!</string>
     <string name="respuestaIncorrecta">WRONG!!</string>
+    <string name="estasSeguro">¿Seguro que desea salir del juego?</string>
+    <string name="advertencia">Cuidado!!</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
 
 </resources>

@@ -20,6 +20,12 @@ public class ModoJuego extends Activity {
     ImageView normalModeImage, timeTrialImage, recordsImage;
 
     @Override
+    public void onBackPressed(){
+        Intent atras = new Intent(ModoJuego.this,Inicio.class);
+        startActivity(atras);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -51,7 +57,6 @@ public class ModoJuego extends Activity {
 
         //CHANGE TYPE OF LETTER
 
-        String font_path = "font/newFontType.ttf";
         Typeface TF = Typeface.createFromAsset(getAssets(),"fonts/fuente.ttf");
 
         title.setTypeface(TF);
@@ -64,7 +69,7 @@ public class ModoJuego extends Activity {
         returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           onBackPressed();
+                onBackPressed();
             }
         });
 

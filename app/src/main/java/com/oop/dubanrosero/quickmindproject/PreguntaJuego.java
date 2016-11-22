@@ -1,6 +1,8 @@
 package com.oop.dubanrosero.quickmindproject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.oop.dubanrosero.quickmindproject.Util.Constant;
 import com.oop.dubanrosero.quickmindproject.dao.PreguntaConTextoDao;
 import com.oop.dubanrosero.quickmindproject.dao.PreguntasConImagenDao;
 import com.oop.dubanrosero.quickmindproject.models.Pregunta;
@@ -22,6 +25,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import static com.oop.dubanrosero.quickmindproject.Records.rectificarPuntaje;
 
 public class PreguntaJuego extends Activity implements View.OnClickListener {
     TextView pregunta;
@@ -154,6 +159,7 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
             Intent gameOver = new Intent(PreguntaJuego.this,FinDelJuego.class);
             gameOver.putExtra("PUNTAJE",contadorPuntaje);
             gameOver.putExtra("TEMA",tema);
+            Constant.pruebaNormal= contadorPuntaje;
             startActivity(gameOver);
         }
         if (numeroDeVidas==1) {
@@ -207,7 +213,7 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
         Bundle bundle = intent.getExtras();
         tema = (int) bundle.get("ELTEMA");
 
-        Log.i("hola", String.valueOf(tema));
+
 
         preguntasConImagenDao = new PreguntasConImagenDao(getResources().getBoolean(R.bool.isEnglish));
 
@@ -234,14 +240,39 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
         respuestaTres.setOnClickListener(this);
         respuestaCuatro.setOnClickListener(this);
     }
+    @Override
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.estasSeguro).setTitle(R.string.advertencia).setPositiveButton(R.string.aceptar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent rendirse = new Intent(PreguntaJuego.this,FinDelJuego.class);
+                rendirse.putExtra("PUNTAJE",contadorPuntaje);
+                rendirse.putExtra("TEMA",tema);
+                startActivity(rendirse);
+                Constant.pruebaNormal= contadorPuntaje;
+                dialogInterface.cancel();
+            }
+        }).setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
 
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog dialog= builder.create();
+        dialog.show();
+    }
     @Override
     public void onClick(View view) {
         respuestaUno= (Button) findViewById(R.id.respuestaUno);
         respuestaDos= (Button) findViewById(R.id.respuestaDos);
         respuestaTres= (Button) findViewById(R.id.respuestaTres);
         respuestaCuatro= (Button) findViewById(R.id.respuestaCuatro);
+        rendirse= (ImageView) findViewById(R.id.rendirse);
         switch (view.getId()){
+
+            //region respuestas
             case R.id.respuestaUno:
                 if(aux==1){
                     if(respuestaUno.getText().equals(preguntaTextoRand.getRespuestaCorrecta())){
@@ -392,6 +423,8 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                 }
 
                 break;
+            // endregion
+
             case R.id.cambioDePregunta:
                 if(contadorCambioDePregunta==0){
                     contadorCambioDePregunta++;
@@ -422,10 +455,33 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                 }
                 break;
             case R.id.rendirse:
-                Intent fin = new Intent(PreguntaJuego.this,FinDelJuego.class);
-                startActivity(fin);
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(R.string.estasSeguro).setTitle(R.string.advertencia).setPositiveButton(R.string.aceptar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent rendirse = new Intent(PreguntaJuego.this,FinDelJuego.class);
+                        rendirse.putExtra("PUNTAJE",contadorPuntaje);
+                        rendirse.putExtra("TEMA",tema);
+                        startActivity(rendirse);
+                        Constant.pruebaNormal= contadorPuntaje;
+                        rectificarPuntaje(Constant.pruebaNormal);
+                        dialogInterface.cancel();
+                    }
+                }).setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.cancel();
+                    }
+                });
+                AlertDialog dialog= builder.create();
+                dialog.show();
                 break;
         }
+
+
     }
     public void eliminarDos(PreguntaSinImagen pregunta){
         int posicionRespuestaCorrecta=0;

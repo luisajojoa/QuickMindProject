@@ -1240,7 +1240,7 @@ public class PreguntaConTextoDao {
                     "¿Qué le sucede a la energía?",
                     Constant.TYPE_CIENCIAS,
                     opciones422,
-                    "Se trasnforma"
+                    "Se transforma"
             );
             data.add(preguntaConTexto422);
 
@@ -2952,7 +2952,7 @@ public class PreguntaConTextoDao {
 
             //region PREGUNTA 331
             String[] opciones331={
-                    "Edvard Munch","Picasso","Lonardo da Vinci","Salvador Dalí"
+                    "Edvard Munch","Picasso","Leonardo da Vinci","Salvador Dalí"
             };
 
             PreguntaSinImagen preguntaConTexto331= new PreguntaSinImagen(

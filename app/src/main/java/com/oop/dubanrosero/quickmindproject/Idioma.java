@@ -45,7 +45,6 @@ public class Idioma extends Activity {
         TextView ingles = (TextView)findViewById(R.id.englishtext);
         ingles.setTypeface(mifuente);
 
-        TextView aleman = (TextView)findViewById(R.id.germantext);
-        aleman.setTypeface(mifuente);
+
     }
 }

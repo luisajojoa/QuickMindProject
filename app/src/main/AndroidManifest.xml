@@ -68,13 +68,13 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".FinDelJuego">
-
             <intent-filter>
                 <action android:name="android.intent.action.FINDELJUEGO" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".PreguntaContrareloj"></activity>
     </application>
 
 </manifest>

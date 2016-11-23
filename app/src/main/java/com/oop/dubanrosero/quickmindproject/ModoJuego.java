@@ -109,7 +109,7 @@ public class ModoJuego extends Activity {
         timeTrialMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent juegoreloj = new Intent(ModoJuego.this,Records.class);
+                Intent juegoreloj = new Intent(ModoJuego.this,PreguntaContrareloj.class);
                 juegoreloj.putExtra("ELTEMA",tema);
                 startActivity(juegoreloj);
             }
@@ -118,7 +118,7 @@ public class ModoJuego extends Activity {
         timeTrialImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent juegoReloj = new Intent(ModoJuego.this,Records.class);
+                Intent juegoReloj = new Intent(ModoJuego.this,PreguntaContrareloj.class);
                 juegoReloj.putExtra("ELTEMA",tema);
                 startActivity(juegoReloj);
             }

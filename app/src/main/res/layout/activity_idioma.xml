@@ -10,29 +10,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/height"
         android:orientation="horizontal"
-        android:layout_weight="0.11">
+        android:layout_weight="1">
         <ImageView
             android:src="@drawable/idiom"
             android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
             android:id="@+id/idiom2"
-            android:layout_height="80dp" />
+            android:layout_height="@dimen/infoicon" />
 
         <TextView
             android:text="@string/Language"
-            android:layout_width="166dp"
+            android:layout_width="@dimen/volicon"
             android:layout_height="wrap_content"
             android:id="@+id/languages1"
             android:layout_gravity="center_vertical"
-            android:textSize="45sp" />
+            android:textSize="@dimen/titulo" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_weight="0.05">
+        android:layout_height="@dimen/height"
+        android:layout_weight="1.5"
+        android:layout_marginLeft="@dimen/margen">
 
         <TextView
             android:text="@string/Textlanguage"
@@ -40,22 +41,24 @@
             android:layout_height="match_parent"
             android:id="@+id/textidioma"
             android:layout_weight="1"
-            android:textSize="24sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp" />
+            android:textSize="@dimen/letratam"
+            android:layout_marginLeft="@dimen/margen"
+            android:layout_marginRight="@dimen/margen"
+            android:layout_marginBottom="@dimen/dist" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="0dp"
-        android:layout_weight="0.04">
+        android:layout_height="@dimen/height"
+        android:elevation="@dimen/height"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/margen">
 
         <ImageView
             android:src="@drawable/spain_flags_flag_17068"
-            android:layout_width="72dp"
-            android:layout_height="83dp"
+            android:layout_width="@dimen/idioicon"
+            android:layout_height="@dimen/infoicon"
+            android:layout_gravity="center_vertical"
             android:id="@+id/spanish" />
 
         <TextView
@@ -63,63 +66,45 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/spanishtext"
-            android:textSize="30sp"
+            android:textSize="@dimen/letratam"
             android:gravity="center_vertical|center_horizontal" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03">
+        android:layout_height="@dimen/height"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/margen">
 
         <ImageView
             android:src="@drawable/united_kingdom_flags_flag_17079"
-            android:layout_width="72dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/idioicon"
             android:id="@+id/english"
-            android:layout_height="83dp" />
+            android:layout_height="@dimen/infoicon" />
 
         <TextView
             android:text="@string/english"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/englishtext"
-            android:textSize="30sp"
+            android:textSize="@dimen/letratam"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical|center_horizontal" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.04">
-
-        <ImageView
-            android:src="@drawable/germany_flags_flag_17001"
-            android:layout_width="72dp"
-            android:layout_height="83dp"
-            android:id="@+id/german" />
-
-        <TextView
-            android:text="@string/german"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/germantext"
-            android:gravity="center_vertical|center_horizontal"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.01">
+        android:layout_height="@dimen/height"
+        android:layout_weight="0.5">
 
         <ImageView
             android:src="@drawable/back"
-            android:layout_width="105dp"
-            android:layout_height="57dp"
+            android:layout_height="match_parent"
             android:id="@+id/backlanguage"
-            android:elevation="0dp"
-            android:layout_marginLeft="235dp" />
+            android:elevation="@dimen/height"
+            android:layout_marginLeft="@dimen/atras"
+            android:layout_width="match_parent" />
     </LinearLayout>
 
 

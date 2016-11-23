@@ -35,7 +35,7 @@ public class Records extends Activity {
     }
 
     public static void rectificarPuntaje(int puntajeNuevo){
-        normal1.setText(String.valueOf(puntajeNuevo));
+//        normal1.setText(String.valueOf(puntajeNuevo));
     }
 
 }

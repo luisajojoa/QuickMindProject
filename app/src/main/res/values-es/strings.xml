@@ -28,8 +28,8 @@
         Ricardo Andres Melo \n
         Duban Fernando Rosero \n \n
 
-        Sugerencias, comentarios, criticas y amenazas
-        alguien@unal.edu.co \n \n
+        Sugerencias, comentarios, criticas o amenazas
+        lajojoam@unal.edu.co \n \n
 
         Gracias por descargar :)
     </string>
@@ -41,7 +41,7 @@
     <string name="contadorPuntaje">00</string>
     <string name="puntaje">Puntaje:</string>
     <string name="respuestaCorrecta">CORRECTO!!</string>
-    <string name="respuestaIncorrecta">WRONG!!</string>
+    <string name="respuestaIncorrecta">INCORRECTO!!</string>
     <string name="estasSeguro">¿Seguro que desea salir del juego?</string>
     <string name="advertencia">Cuidado!!</string>
     <string name="aceptar">Aceptar</string>

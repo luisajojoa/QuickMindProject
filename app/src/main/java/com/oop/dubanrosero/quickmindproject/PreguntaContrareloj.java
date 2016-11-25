@@ -24,10 +24,10 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Random;
 
-import static com.oop.dubanrosero.quickmindproject.Records.rectificarPuntaje;
+
 
 public class PreguntaContrareloj extends Activity implements View.OnClickListener {
-
+    Records records= new Records();
     TextView pregunta,crono,puntaje;
     Button respuestaUno,respuestaDos,respuestaTres,respuestaCuatro;
     ImageView corazonUno,corazonDos,imagen,corazonTres,cambioDepregunta,cincuenta,masTiempo;
@@ -37,13 +37,16 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
     int numeroDeVidas=3;
     int tema;
     int segundo;
-    int tiempoPregunta=8000;
+    int tiempoPregunta=15000;
     PreguntaConTextoDao preguntasSinImagenDao;
     PreguntasConImagenDao preguntasConImagenDao;
     PreguntaConImagen preguntaImagenRand;
     PreguntaSinImagen preguntaTextoRand;
     int contador5050=0;
     int contadorCambioDePregunta=0;
+    int contadorMasTiempo=0;
+    CountDownTimer cronometro;
+
 
 
 
@@ -64,7 +67,8 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
             Intent gameOver = new Intent(PreguntaContrareloj.this,FinDelJuego.class);
             gameOver.putExtra("PUNTAJE",contadorPuntaje);
             gameOver.putExtra("TEMA",tema);
-            Constant.pruebaNormal= contadorPuntaje;
+
+            records.rectificarPuntaje(contadorPuntaje,0);
             startActivity(gameOver);
         }
         if (numeroDeVidas==1) {
@@ -130,7 +134,9 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
             respuestaCuatro.setText(preguntaTextoRand.getOpciones()[3]);
 
             //endregion
+
             setCronometro(tiempoPregunta);
+
         }else {
             //PREGUNTA CON IMAGEN
             aux =2;
@@ -154,7 +160,9 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
 
             }
             //endregion
+
             setCronometro(tiempoPregunta);
+
             //region LLEVANDO PREGUNTA A ACTIVIDAD
             //IMAGEN(PREGUNTA)
             Picasso.with(this).load(preguntaImagenRand.getImagen()).into(imagen);
@@ -226,6 +234,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
         respuestaCuatro = (Button) findViewById(R.id.respuestaCuatro);
         puntaje = (TextView) findViewById(R.id.puntaje);
         crono= (TextView) findViewById(R.id.cronometro);
+        masTiempo= (ImageView) findViewById(R.id.masTiempo);
         //endregion
 
         //region cambio del tipo de letra
@@ -253,11 +262,35 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
         cambioDepregunta.setOnClickListener(this);
         cincuenta= (ImageView) findViewById(R.id.menosDos);
         cincuenta.setOnClickListener(this);
-
+        masTiempo.setOnClickListener(this);
         respuestaUno.setOnClickListener(this);
         respuestaDos.setOnClickListener(this);
         respuestaTres.setOnClickListener(this);
         respuestaCuatro.setOnClickListener(this);
+    }
+
+    @Override
+    public void onBackPressed(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.estasSeguro).setTitle(R.string.advertencia).setPositiveButton(R.string.aceptar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent rendirse = new Intent(PreguntaContrareloj.this,FinDelJuego.class);
+                rendirse.putExtra("PUNTAJE",contadorPuntaje);
+                rendirse.putExtra("TEMA",tema);
+                startActivity(rendirse);
+                records.rectificarPuntaje(contadorPuntaje,0);
+                dialogInterface.cancel();
+            }
+        }).setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog dialog= builder.create();
+        dialog.show();
     }
 
     @Override
@@ -279,6 +312,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastBien.show();
 
                         contadorPuntaje+=5;
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaUno.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -287,6 +321,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }else{
@@ -296,6 +331,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
                         toastBien.show();
                         contadorPuntaje+=5;
+                        cronometro.cancel();
 
                         crearPregunta(tema);
                     }else{
@@ -305,10 +341,12 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }
                 break;
+
             case R.id.respuestaDos:
                 if(aux==1){
                     if(respuestaDos.getText().equals(preguntaTextoRand.getRespuestaCorrecta())){
@@ -318,6 +356,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastBien.show();
 
                         contadorPuntaje+=5;
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaDos.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -326,6 +365,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }else{
@@ -336,6 +376,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastBien.show();
 
                         contadorPuntaje+=5;
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaDos.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -344,6 +385,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }
@@ -357,7 +399,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
                         toastBien.show();
                         contadorPuntaje+=5;
-
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaTres.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -366,6 +408,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }else{
@@ -375,7 +418,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
                         toastBien.show();
                         contadorPuntaje+=5;
-
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaTres.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -384,6 +427,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }
@@ -396,7 +440,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
                         toastBien.show();
                         contadorPuntaje+=5;
-
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaCuatro.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -405,6 +449,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaTextoRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }else{
@@ -414,7 +459,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         Toast toastBien= Toast.makeText(getApplicationContext(), R.string.respuestaCorrecta, Toast.LENGTH_SHORT);
                         toastBien.show();
                         contadorPuntaje+=5;
-
+                        cronometro.cancel();
                         crearPregunta(tema);
                     }else{
                         respuestaCuatro.setBackgroundColor(getResources().getColor(R.color.rojo));
@@ -423,6 +468,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                         toastMal.show();
                         contadorPuntaje--;
                         rectificarRespuestaCorrecta(preguntaImagenRand,respuestaUno,respuestaDos,respuestaTres,respuestaCuatro);
+                        cronometro.cancel();
                         quitarCorazon(numeroDeVidas);
                     }
                 }
@@ -430,9 +476,11 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                 break;
             // endregion
 
+            //region COMODINES
             case R.id.cambioDePregunta:
                 if(contadorCambioDePregunta==0){
                     contadorCambioDePregunta++;
+                    cronometro.cancel();
                     crearPregunta(tema);
                     ImageView bCambio= (ImageView) findViewById(R.id.cambioDePregunta);
                     bCambio.setAlpha((float) 0.5);
@@ -459,6 +507,21 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
 
                 }
                 break;
+
+            case R.id.masTiempo:
+                if(contadorMasTiempo==0) {
+                    contadorMasTiempo++;
+                    int tiempoActual = segundo * 1000;
+                    cronometro.cancel();
+                    setCronometro(tiempoActual + 8000);
+                    masTiempo.setAlpha((float) 0.5);
+                }else {
+                    Toast toast2 = Toast.makeText(getApplicationContext(), "Comodin no disponible", Toast.LENGTH_SHORT);
+                    toast2.show();
+                }
+
+                break;
+            //endregion
             default:
                 break;
         }
@@ -521,7 +584,7 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
     public void setCronometro(int tiempo){
         //region CRONOMETRO
         //el primer numero es el tiempo de duración
-        new CountDownTimer(tiempo, 500) {
+        cronometro =  new CountDownTimer(tiempo, 500) {
             public void onTick(long millisUntilFinished) {
                 segundo = (int) (millisUntilFinished/1000);
 
@@ -544,7 +607,9 @@ public class PreguntaContrareloj extends Activity implements View.OnClickListene
                 //endregion
             }
             public void onFinish() {
-
+                numeroDeVidas--;
+                contadorPuntaje--;
+                quitarCorazon(numeroDeVidas);
             }
         }.start();
         //endregion

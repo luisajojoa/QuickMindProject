@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.oop.dubanrosero.quickmindproject.Records.rectificarPuntaje;
+
 
 public class PreguntaJuego extends Activity implements View.OnClickListener {
     TextView pregunta;
@@ -39,7 +39,7 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
     ImageView imagen;
     int contador5050=0;
     int contadorCambioDePregunta=0;
-
+    Records records= new Records();
     int tema;
     PreguntaConTextoDao preguntasSinImagenDao;
     PreguntasConImagenDao preguntasConImagenDao;
@@ -159,7 +159,8 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
             Intent gameOver = new Intent(PreguntaJuego.this,FinDelJuego.class);
             gameOver.putExtra("PUNTAJE",contadorPuntaje);
             gameOver.putExtra("TEMA",tema);
-            Constant.pruebaNormal= contadorPuntaje;
+
+            records.rectificarPuntaje(contadorPuntaje,1);
             startActivity(gameOver);
         }
         if (numeroDeVidas==1) {
@@ -250,7 +251,7 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                 rendirse.putExtra("PUNTAJE",contadorPuntaje);
                 rendirse.putExtra("TEMA",tema);
                 startActivity(rendirse);
-                Constant.pruebaNormal= contadorPuntaje;
+                records.rectificarPuntaje(contadorPuntaje,1);
                 dialogInterface.cancel();
             }
         }).setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
@@ -465,8 +466,7 @@ public class PreguntaJuego extends Activity implements View.OnClickListener {
                         rendirse.putExtra("PUNTAJE",contadorPuntaje);
                         rendirse.putExtra("TEMA",tema);
                         startActivity(rendirse);
-                        Constant.pruebaNormal= contadorPuntaje;
-                        rectificarPuntaje(Constant.pruebaNormal);
+                        records.rectificarPuntaje(contadorPuntaje,1);
                         dialogInterface.cancel();
                     }
                 }).setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
